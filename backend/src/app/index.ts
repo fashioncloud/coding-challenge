@@ -1,5 +1,4 @@
 import * as express from 'express';
-import * as bodyParser from 'body-parser';
 
 import DBConnector from './db-connector';
 import Config from './config';
@@ -11,8 +10,8 @@ const connectDatabases = async () => {
 };
 
 const addBodyParser = async () => {
-    app.use(bodyParser.urlencoded({extended: false}));
-    app.use(bodyParser.json());
+    app.use(express.urlencoded({extended: false}));
+    app.use(express.json());
 };
 
 const listenPort = (PORT) => {
